@@ -13,21 +13,11 @@ export default class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-[40vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-2xl border border-pif-cream/30 bg-pif-deep p-8 text-center">
-            <p className="font-display text-xl font-bold">Something went wrong</p>
-            <p className="mt-3 text-sm text-pif-cream/70">
-              Please refresh the page. If the issue continues, contact us on WhatsApp.
-            </p>
-            <button
-              type="button"
-              onClick={() => window.location.reload()}
-              className="btn-primary mt-6"
-            >
-              Refresh Page
-            </button>
+        this.props.fallback || (
+          <div className="rounded-2xl border border-pif-cream/30 bg-pif-deep p-8 text-center">
+            <p className="text-sm text-pif-cream/70">This section could not be loaded. Please refresh the page.</p>
           </div>
-        </div>
+        )
       )
     }
 

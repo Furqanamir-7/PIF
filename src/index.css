@@ -14,15 +14,52 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-pif-cream px-6 py-3 text-sm font-semibold uppercase tracking-wide text-pif-dark transition-all duration-300 hover:bg-transparent hover:text-pif-cream hover:ring-2 hover:ring-pif-cream;
+    @apply inline-flex items-center justify-center rounded-full bg-pif-cream px-6 py-3 text-sm font-semibold uppercase tracking-wide text-pif-dark;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    @apply bg-transparent text-pif-cream ring-2 ring-pif-cream;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(244, 240, 230, 0.15);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: none;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-full border-2 border-pif-cream bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wide text-pif-cream transition-all duration-300 hover:bg-pif-cream hover:text-pif-dark;
+    @apply inline-flex items-center justify-center rounded-full border-2 border-pif-cream bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wide text-pif-cream;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-outline:hover {
+    @apply bg-pif-cream text-pif-dark;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(244, 240, 230, 0.12);
+  }
+
+  .btn-outline:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: none;
+  }
+
+  .nav-link {
+    @apply rounded-full px-3 py-2 text-sm transition-all duration-300;
+  }
+
+  .nav-link:hover {
+    transform: translateY(-1px);
   }
 
   .card {
     @apply rounded-2xl border border-pif-cream/30 bg-pif-deep p-6 transition-all duration-300 hover:border-pif-cream/60;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
   }
 
   .section-title {
@@ -144,4 +181,31 @@
 .fade-in-section {
   opacity: 1;
   transform: translateY(0);
+}
+
+.page-enter {
+  animation: pageEnter 0.45s ease-out both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .btn-primary,
+  .btn-outline,
+  .card,
+  .nav-link {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
 }

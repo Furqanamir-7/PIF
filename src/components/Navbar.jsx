@@ -37,7 +37,7 @@ export default function Navbar() {
                 to={link.path}
                 end={link.path === '/'}
                 className={({ isActive }) =>
-                  `rounded-full px-3 py-2 text-sm transition-colors ${
+                  `nav-link ${
                     isActive ? 'bg-pif-deep text-pif-cream' : 'text-pif-cream/80 hover:text-pif-cream'
                   }`
                 }

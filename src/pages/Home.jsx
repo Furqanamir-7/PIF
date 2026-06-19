@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
 import PetCard from '../components/PetCard'
-import HeroAnimalModel from '../components/HeroAnimalModelLoader'
-import RescueMap from '../components/RescueMap'
+import SafeHeroAnimalModel from '../components/SafeHeroAnimalModel'
+import SafeRescueMap from '../components/SafeRescueMap'
 import { EVENTS, PETS, PROGRAMS, STATS } from '../data/constants'
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none lg:justify-self-end">
             <div className="absolute inset-0 rounded-full border border-pif-cream/10 bg-pif-deep/40 blur-0" />
             <div className="relative h-full min-h-[320px] overflow-hidden rounded-3xl border border-pif-cream/25 bg-gradient-to-b from-pif-deep/80 to-pif-dark md:min-h-[400px] lg:min-h-[460px]">
-              <HeroAnimalModel className="h-full min-h-[320px] md:min-h-[400px] lg:min-h-[460px]" />
+              <SafeHeroAnimalModel className="h-full min-h-[320px] md:min-h-[400px] lg:min-h-[460px]" />
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Home() {
             Explore rescue centers, event locations, and partner shelters across our community.
           </p>
         </div>
-        <RescueMap />
+        <SafeRescueMap />
       </FadeInSection>
 
       <FadeInSection className="bg-pif-deep px-4 py-16 md:px-6 md:py-24">

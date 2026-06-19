@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
-import HeroAnimalModel from '../components/HeroAnimalModelLoader'
+import SafeHeroAnimalModel from '../components/SafeHeroAnimalModel'
 import { PROGRAMS, STATS } from '../data/constants'
 
 export default function About() {
@@ -51,7 +51,7 @@ export default function About() {
       <FadeInSection className="bg-pif-deep px-4 py-16 md:px-6">
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-2xl border border-pif-cream/30 bg-pif-deep">
-            <HeroAnimalModel compact={false} className="h-[420px] md:h-[480px]" />
+            <SafeHeroAnimalModel compact={false} className="h-[420px] md:h-[480px]" />
           </div>
         </div>
       </FadeInSection>
