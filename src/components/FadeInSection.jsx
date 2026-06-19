@@ -7,6 +7,12 @@ export default function FadeInSection({ children, className = '' }) {
     const element = ref.current
     if (!element) return undefined
 
+    element.classList.add('visible')
+
+    if (!('IntersectionObserver' in window)) {
+      return undefined
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -14,7 +20,7 @@ export default function FadeInSection({ children, className = '' }) {
           observer.unobserve(element)
         }
       },
-      { threshold: 0.15 },
+      { threshold: 0.1 },
     )
 
     observer.observe(element)
@@ -22,7 +28,7 @@ export default function FadeInSection({ children, className = '' }) {
   }, [])
 
   return (
-    <div ref={ref} className={`fade-in-section ${className}`}>
+    <div ref={ref} className={`fade-in-section visible ${className}`}>
       {children}
     </div>
   )
