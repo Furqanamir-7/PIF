@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
-import WireframeAnimals from '../components/WireframeAnimals'
+import WireframeAnimalsLoader from '../components/WireframeAnimalsLoader'
 import { PROGRAMS, STATS } from '../data/constants'
 
 export default function About() {
@@ -50,7 +50,7 @@ export default function About() {
 
       <FadeInSection className="bg-pif-deep px-4 py-16 md:px-6">
         <div className="mx-auto max-w-7xl">
-          <WireframeAnimals />
+          <WireframeAnimalsLoader />
         </div>
       </FadeInSection>
 

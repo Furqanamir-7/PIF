@@ -1,10 +1,10 @@
 export default function Logo({ className = 'h-12 w-12' }) {
   return (
-    <div className={`relative overflow-hidden rounded-full border border-pif-cream/40 bg-pif-dark ${className}`}>
+    <div className={`relative overflow-hidden rounded-full border-2 border-pif-cream bg-pif-dark p-0.5 ${className}`}>
       <img
         src="/logo.png"
         alt="Play It Forward logo — dog and cat line art, Est. 2024"
-        className="h-full w-full object-cover"
+        className="h-full w-full rounded-full object-contain"
         onError={(e) => {
           e.currentTarget.style.display = 'none'
           e.currentTarget.nextElementSibling?.classList.remove('hidden')
