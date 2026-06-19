@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import FadeInSection from '../components/FadeInSection'
-import RescueMapLoader from '../components/RescueMapLoader'
+import RescueMap from '../components/RescueMap'
 import { ADDRESS, EMAIL, PHONE, PHONE_DISPLAY } from '../data/constants'
 
 export default function Contact() {
@@ -96,7 +96,7 @@ export default function Contact() {
 
           <div>
             <h2 className="mb-6 font-display text-2xl font-bold">Find Us</h2>
-            <RescueMapLoader />
+            <RescueMap />
           </div>
         </div>
       </FadeInSection>

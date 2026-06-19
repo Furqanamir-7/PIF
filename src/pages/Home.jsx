@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
 import PetCard from '../components/PetCard'
-import WireframeAnimalsLoader from '../components/WireframeAnimalsLoader'
-import RescueMapLoader from '../components/RescueMapLoader'
+import WireframeAnimals from '../components/WireframeAnimals'
+import RescueMap from '../components/RescueMap'
 import { EVENTS, PETS, PROGRAMS, STATS } from '../data/constants'
 
 export default function Home() {
@@ -63,7 +63,7 @@ export default function Home() {
               Interact with our rescue figures — click the callouts to explore how we help dogs and cats.
             </p>
           </div>
-          <WireframeAnimalsLoader />
+          <WireframeAnimals />
         </div>
       </FadeInSection>
 
@@ -74,7 +74,7 @@ export default function Home() {
             Explore rescue centers, event locations, and partner shelters across our community.
           </p>
         </div>
-        <RescueMapLoader />
+        <RescueMap />
       </FadeInSection>
 
       <FadeInSection className="bg-pif-deep px-4 py-16 md:px-6 md:py-24">
