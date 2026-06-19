@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-pif-dark text-pif-cream antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-pif-cream px-6 py-3 text-sm font-semibold uppercase tracking-wide text-pif-dark transition-all duration-300 hover:bg-transparent hover:text-pif-cream hover:ring-2 hover:ring-pif-cream;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-pif-cream bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wide text-pif-cream transition-all duration-300 hover:bg-pif-cream hover:text-pif-dark;
+  }
+
+  .card {
+    @apply rounded-2xl border border-pif-cream/30 bg-pif-deep p-6 transition-all duration-300 hover:border-pif-cream/60;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold text-pif-cream md:text-4xl lg:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mt-4 max-w-2xl text-base text-pif-cream/80 md:text-lg;
+  }
+}
+
+.leaflet-container {
+  background: #16261a !important;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.leaflet-control-zoom a {
+  background: #1e3322 !important;
+  color: #f4f0e6 !important;
+  border: 1px solid #f4f0e6 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #16261a !important;
+}
+
+.map-marker-pulse {
+  animation: markerPulse 2s ease-in-out infinite;
+}
+
+@keyframes markerPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 240, 230, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(244, 240, 230, 0);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
