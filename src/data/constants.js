@@ -1,6 +1,15 @@
 export const PHONE = '+923099128492'
 export const PHONE_DISPLAY = '+92 309 9128492'
 export const WHATSAPP_URL = 'https://wa.me/923099128492'
+export const ADOPT_WHATSAPP_MESSAGE = 'Hey! I wanna adopt a pet'
+export const ADOPT_WHATSAPP_URL = `https://wa.me/923099128492?text=${encodeURIComponent(ADOPT_WHATSAPP_MESSAGE)}`
+
+export function getAdoptWhatsAppUrl(petName) {
+  const message = petName
+    ? `Hey! I wanna adopt a pet — ${petName}`
+    : ADOPT_WHATSAPP_MESSAGE
+  return `https://wa.me/923099128492?text=${encodeURIComponent(message)}`
+}
 export const EMAIL = 'hello@playitforward.org'
 export const ADDRESS = '123 Rescue Lane, Community District, Pakistan'
 

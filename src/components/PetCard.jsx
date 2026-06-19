@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { getAdoptWhatsAppUrl } from '../data/constants'
 
 export default function PetCard({ pet }) {
   return (
@@ -16,9 +16,14 @@ export default function PetCard({ pet }) {
         <p className="mt-1 text-sm text-pif-cream/70">
           {pet.breed} · {pet.age}
         </p>
-        <Link to="/adopt" className="btn-primary mt-4 w-full text-xs">
+        <a
+          href={getAdoptWhatsAppUrl(pet.name)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary mt-4 w-full text-xs"
+        >
           Meet Me
-        </Link>
+        </a>
       </div>
     </article>
   )

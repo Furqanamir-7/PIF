@@ -13,32 +13,31 @@ export default function Home() {
           src="/logo.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -left-8 top-1/2 hidden h-[min(520px,85vh)] w-[min(520px,85vh)] -translate-y-1/2 object-contain opacity-[0.07] md:block lg:left-0 lg:h-[560px] lg:w-[560px]"
+          className="pointer-events-none absolute -left-4 top-1/2 hidden h-72 w-72 -translate-y-1/2 object-contain opacity-[0.07] md:block lg:left-0 lg:h-80 lg:w-80"
         />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:px-6 md:py-20 lg:grid-cols-2 lg:gap-6 lg:py-24">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-8 md:px-6 md:py-10 lg:grid-cols-2 lg:gap-8 lg:py-12">
           <div className="text-center lg:text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pif-cream/60">Est. 2024</p>
-            <h1 className="mt-4 font-display text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            <h1 className="mt-2 font-display text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
               Play It Forward — Giving Every Pet a Second Chance
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base text-pif-cream/80 md:text-lg lg:mx-0">
+            <p className="mx-auto mt-3 max-w-xl text-sm text-pif-cream/80 md:text-base lg:mx-0">
               Adopt a pet, support youth programs, and help rescue animals find loving homes.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-              <Link to="/adopt" className="btn-primary min-w-[180px]">
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+              <Link to="/adopt" className="btn-primary min-w-[160px]">
                 Adopt Now
               </Link>
-              <Link to="/donate" className="btn-outline min-w-[180px]">
+              <Link to="/donate" className="btn-outline min-w-[160px]">
                 Donate Now
               </Link>
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none lg:justify-self-end">
-            <div className="absolute inset-0 rounded-full border border-pif-cream/10 bg-pif-deep/40 blur-0" />
-            <div className="relative h-full min-h-[320px] overflow-hidden rounded-3xl border border-pif-cream/25 bg-gradient-to-b from-pif-deep/80 to-pif-dark md:min-h-[400px] lg:min-h-[460px]">
-              <SafeHeroAnimalModel className="h-full min-h-[320px] md:min-h-[400px] lg:min-h-[460px]" />
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-md lg:justify-self-end">
+            <div className="relative h-[260px] overflow-hidden rounded-2xl border border-pif-cream/25 bg-gradient-to-b from-pif-deep/80 to-pif-dark sm:h-[300px] md:h-[340px]">
+              <SafeHeroAnimalModel className="h-full" />
             </div>
           </div>
         </div>
