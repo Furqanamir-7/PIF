@@ -5,20 +5,23 @@ import 'leaflet/dist/leaflet.css'
 import { MAP_LOCATIONS } from '../data/constants'
 
 const creamIcon = L.divIcon({
-  className: 'pif-map-marker',
-  html: '<div style="width:14px;height:14px;border-radius:9999px;border:2px solid #F4F0E6;background:rgba(244,240,230,0.85);box-shadow:0 0 12px rgba(244,240,230,0.45);"></div>',
-  iconSize: [14, 14],
-  iconAnchor: [7, 7],
+  className: 'pif-map-marker-wrap',
+  html: `<div class="pif-marker"><span class="pif-marker-ring"></span><span class="pif-marker-core"></span></div>`,
+  iconSize: [28, 28],
+  iconAnchor: [14, 14],
+  popupAnchor: [0, -16],
 })
 
-function MapStyleFilter() {
+function MapTint() {
   const map = useMap()
 
   useEffect(() => {
-    const container = map.getContainer()
-    container.style.filter = 'hue-rotate(80deg) brightness(0.55) saturate(0.7)'
+    const tilePane = map.getPane('tilePane')
+    if (tilePane) {
+      tilePane.style.filter = 'brightness(0.62) saturate(0.35) sepia(0.35) hue-rotate(65deg)'
+    }
     return () => {
-      container.style.filter = ''
+      if (tilePane) tilePane.style.filter = ''
     }
   }, [map])
 
@@ -53,13 +56,13 @@ export default function RescueMap() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         />
-        <MapStyleFilter />
+        <MapTint />
         {MAP_LOCATIONS.map((location) => (
           <Marker key={location.id} position={[location.lat, location.lng]} icon={creamIcon}>
-            <Popup>
-              <div className="min-w-[180px] rounded-lg border border-[#F4F0E6] bg-[#1E3322] p-3 text-[#F4F0E6]">
-                <p className="text-[10px] font-semibold tracking-widest">{location.category}</p>
-                <p className="mt-1 text-sm">{location.name}</p>
+            <Popup className="pif-map-popup" closeButton={false} minWidth={200}>
+              <div className="pif-popup-card">
+                <p className="pif-popup-label">{location.category}</p>
+                <p className="pif-popup-title">{location.name}</p>
               </div>
             </Popup>
           </Marker>

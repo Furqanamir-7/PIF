@@ -1,8 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import WhatsAppWidget from './WhatsAppWidget'
-import CallButton from './CallButton'
+import FloatingContactDock from './FloatingContactDock'
 
 export default function Layout() {
   return (
@@ -12,8 +11,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
-      <CallButton />
-      <WhatsAppWidget />
+      <FloatingContactDock />
     </div>
   )
 }
