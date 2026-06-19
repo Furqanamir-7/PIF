@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
 import PetCard from '../components/PetCard'
-import HeroAnimalModel from '../components/HeroAnimalModel'
+import HeroAnimalModel from '../components/HeroAnimalModelLoader'
 import RescueMap from '../components/RescueMap'
 import { EVENTS, PETS, PROGRAMS, STATS } from '../data/constants'
 

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
-import HeroAnimalModel from '../components/HeroAnimalModel'
+import HeroAnimalModel from '../components/HeroAnimalModelLoader'
 import { PROGRAMS, STATS } from '../data/constants'
 
 export default function About() {

@@ -1,6 +1,6 @@
 import { Suspense, useMemo, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Environment, OrbitControls, useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
 const MODELS = {
@@ -90,7 +90,6 @@ function Scene({ animal, compact = false }) {
         autoRotate
         autoRotateSpeed={0.8}
       />
-      <Environment preset="city" />
     </>
   )
 }
